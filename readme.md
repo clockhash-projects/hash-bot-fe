@@ -34,39 +34,32 @@ npm test
 To avoid unpkg.com redirects to the actual file, you can also directly import:
 https://cdn.jsdelivr.net/npm/alpha-interface@0.0.1/dist/hash-bot/hash-bot.esm.js
 -->
-<my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+<hash-bot apiurl="apiUrl" iconsize="90" chatbotwidth="300" chatbotheight="400"></hash-bot>
 ```
 
-This will only load the necessary scripts needed to render `<my-component />`. Once more components of this package are used, they will automatically be loaded lazily.
+This will only load the necessary scripts needed to render `<hash-bot/>`. Once more components of this package are used, they will automatically be loaded lazily.
 
 You can also import the script as part of your `node_modules` in your applications entry file:
 
 ```tsx
-import 'foobar-design-system/dist/foobar-design-system/foobar-design-system.esm.js';
+import 'alpha-interface/dist/hash-bot/hash-bot.esm.js';
 ```
-
-Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-y6v26a?file=src%2Fmain.tsx).
 
 ### Standalone
 
-If you are using a Stencil component library with `dist-custom-elements`, we recommend importing Stencil components individually in those files where they are needed.
-
-To export Stencil components as standalone components make sure you have the [`dist-custom-elements`](https://stenciljs.com/docs/custom-elements) output target defined in your `stencil.config.ts`.
-
-For example, given you'd like to use `<my-component />` as part of a React component, you can import the component directly via:
-
 ```tsx
-import 'foobar-design-system/my-component';
+import 'alpha-interface/hash-bot';
 
 function App() {
   return (
     <>
       <div>
-        <my-component
-          first="Stencil"
-          middle="'Don't call me a framework'"
-          last="JS"
-        ></my-component>
+        <hash-bot
+          apiurl="apiUrl" 
+          iconsize="90" 
+          chatbotwidth="300" 
+          chatbotheight="400"
+        ></hash-bot>
       </div>
     </>
   );
@@ -74,5 +67,3 @@ function App() {
 
 export default App;
 ```
-
-Check out this [Live Demo](https://stackblitz.com/edit/vitejs-vite-b6zuds?file=src%2FApp.tsx).
