@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import { HashBot } from './hash-bot';
 
 describe('my-component', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
+      components: [HashBot],
       html: '<my-component></my-component>',
     });
     expect(root).toEqualHtml(`
@@ -20,7 +20,7 @@ describe('my-component', () => {
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
+      components: [HashBot],
       html: `<my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>`,
     });
     expect(root).toEqualHtml(`

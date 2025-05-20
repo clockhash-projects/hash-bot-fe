@@ -6,40 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The URL of the WebSocket server to connect to.
-         */
+    interface HashBot {
         "apiurl": string;
+        "chatbotheight": number;
+        "chatbotwidth": number;
+        "iconsize": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLHashBotElement extends Components.HashBot, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLHashBotElement: {
+        prototype: HTMLHashBotElement;
+        new (): HTMLHashBotElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "hash-bot": HTMLHashBotElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The URL of the WebSocket server to connect to.
-         */
+    interface HashBot {
         "apiurl"?: string;
+        "chatbotheight"?: number;
+        "chatbotwidth"?: number;
+        "iconsize"?: number;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "hash-bot": HashBot;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "hash-bot": LocalJSX.HashBot & JSXBase.HTMLAttributes<HTMLHashBotElement>;
         }
     }
 }
