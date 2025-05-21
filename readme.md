@@ -48,7 +48,7 @@ import 'alpha-interface/dist/hash-bot/hash-bot.esm.js';
 ### Standalone
 
 ```tsx
-import 'alpha-interface/hash-bot';
+import 'alpha-interface';
 
 function App() {
   return (
