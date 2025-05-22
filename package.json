@@ -55,8 +55,5 @@
   "license": "MIT",
   "dependencies": {
     "socket.io-client": "^4.8.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
