@@ -8,6 +8,8 @@ import { io, Socket } from 'socket.io-client';
 })
 export class HashBot {
   @Prop() apiurl: string;
+  @Prop() agent_uuid: string;
+  @Prop() chat_id: string = 'default-chat';
   @Prop() iconsize: number = 40; // Default size is 40
   @Prop() chatbotwidth: number = 300; // Default chatbox width
   @Prop() chatbotheight: number = 400; // Default chatbox height
@@ -72,7 +74,13 @@ export class HashBot {
     if (message) {
       this.addMessage(message, 'user');
       this.isBotTyping = true;
-      this.socket.emit("ask", {"question": message});
+
+      this.socket.emit('ask', {
+        message: message,
+        agent_uuid: this.agent_uuid,
+        chat_id: this.chat_id,
+      });
+
       this.inputRef.value = '';
     }
   }
