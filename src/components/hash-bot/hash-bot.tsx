@@ -9,7 +9,7 @@ import { io, Socket } from 'socket.io-client';
 export class HashBot {
   @Prop() apiurl: string;
   @Prop() agent_uuid: string;
-  @Prop() chat_id: string = 'default-chat'; // fallback if not passed
+  @Prop() chat_id: string = 'default-chat';
   @Prop() iconsize: number = 40; // Default size is 40
   @Prop() chatbotwidth: number = 300; // Default chatbox width
   @Prop() chatbotheight: number = 400; // Default chatbox height
@@ -28,19 +28,7 @@ export class HashBot {
   private floatingIconRef: HTMLElement;
   private chatContainerRef: HTMLElement;
 
-  generateRandomChatId(length: number = 12): string {
-    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return result;
-  }
-
   connectedCallback() {
-    if (!this.chat_id || this.chat_id === 'default-chat') {
-      this.chat_id = this.generateRandomChatId();
-    }
     if (!this.apiurl) {
       console.error('API URL is required for the hash-bot component');
       return;
