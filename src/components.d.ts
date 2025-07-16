@@ -7,7 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface HashBot {
+        "agent_uuid": string;
         "apiurl": string;
+        "chat_id": string;
         "chatbotheight": number;
         "chatbotwidth": number;
         "iconsize": number;
@@ -26,7 +28,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface HashBot {
+        "agent_uuid"?: string;
         "apiurl"?: string;
+        "chat_id"?: string;
         "chatbotheight"?: number;
         "chatbotwidth"?: number;
         "iconsize"?: number;
