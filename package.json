@@ -1,6 +1,6 @@
 {
   "name": "alpha-interface",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Here is a simple interface for a chat bot. It is a web component that can be used in any web application.",
   "keywords": [
     "web-components",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/clockhash-projects/hash-bot-fe"
+    "url": "git+https://github.com/clockhash-projects/hash-bot-fe.git"
   },
   "files": [
     "dist/",
