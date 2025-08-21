@@ -7,9 +7,14 @@
 
 ## Properties
 
-| Property | Attribute | Description    | Type     | Default     |
-| -------- | --------- | -------------- | -------- | ----------- |
-| `apiUrl` | `api-url` | The first name | `string` | `undefined` |
+| Property        | Attribute       | Description | Type     | Default          |
+| --------------- | --------------- | ----------- | -------- | ---------------- |
+| `agent_uuid`    | `agent_uuid`    |             | `string` | `undefined`      |
+| `apiurl`        | `apiurl`        |             | `string` | `undefined`      |
+| `chat_id`       | `chat_id`       |             | `string` | `'default-chat'` |
+| `chatbotheight` | `chatbotheight` |             | `number` | `400`            |
+| `chatbotwidth`  | `chatbotwidth`  |             | `number` | `300`            |
+| `iconsize`      | `iconsize`      |             | `number` | `40`             |
 
 
 ----------------------------------------------

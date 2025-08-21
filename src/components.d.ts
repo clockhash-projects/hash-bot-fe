@@ -9,9 +9,21 @@ export namespace Components {
     interface HashBot {
         "agent_uuid": string;
         "apiurl": string;
+        /**
+          * @default 'default-chat'
+         */
         "chat_id": string;
+        /**
+          * @default 400
+         */
         "chatbotheight": number;
+        /**
+          * @default 300
+         */
         "chatbotwidth": number;
+        /**
+          * @default 40
+         */
         "iconsize": number;
     }
 }
@@ -30,9 +42,21 @@ declare namespace LocalJSX {
     interface HashBot {
         "agent_uuid"?: string;
         "apiurl"?: string;
+        /**
+          * @default 'default-chat'
+         */
         "chat_id"?: string;
+        /**
+          * @default 400
+         */
         "chatbotheight"?: number;
+        /**
+          * @default 300
+         */
         "chatbotwidth"?: number;
+        /**
+          * @default 40
+         */
         "iconsize"?: number;
     }
     interface IntrinsicElements {
