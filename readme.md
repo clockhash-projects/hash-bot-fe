@@ -32,7 +32,7 @@ npm test
 <script type="module" src="https://unpkg.com/hash-bot"></script>
 <!--
 To avoid unpkg.com redirects to the actual file, you can also directly import:
-https://cdn.jsdelivr.net/npm/alpha-interface@0.0.9/dist/hash-bot/hash-bot.esm.js
+https://cdn.jsdelivr.net/npm/alpha-interface@1.0.0/dist/hash-bot/hash-bot.esm.js
 -->
 <hash-bot agent_uuid="agent_uuid"  apiurl="apiUrl" iconsize="90" chatbotwidth="300" chatbotheight="400"></hash-bot>
 ```
