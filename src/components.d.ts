@@ -10,10 +10,6 @@ export namespace Components {
         "agent_uuid": string;
         "apiurl": string;
         /**
-          * @default 'default-chat'
-         */
-        "chat_id": string;
-        /**
           * @default 400
          */
         "chatbotheight": number;
@@ -42,10 +38,6 @@ declare namespace LocalJSX {
     interface HashBot {
         "agent_uuid"?: string;
         "apiurl"?: string;
-        /**
-          * @default 'default-chat'
-         */
-        "chat_id"?: string;
         /**
           * @default 400
          */

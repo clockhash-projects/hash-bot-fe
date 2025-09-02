@@ -9,7 +9,6 @@ import { io, Socket } from 'socket.io-client';
 export class HashBot {
   @Prop() apiurl: string;
   @Prop() agent_uuid: string;
-  @Prop() chat_id: string = 'default-chat';
   @Prop() iconsize: number = 40; // Default size is 40
   @Prop() chatbotwidth: number = 300; // Default chatbox width
   @Prop() chatbotheight: number = 400; // Default chatbox height
@@ -18,6 +17,7 @@ export class HashBot {
   @State() unreadMessages: number = 0;
   @State() isBotTyping: boolean = false;
   @State() isDragging: boolean = false;
+  @State() chatId: string = '';
 
   private socket: Socket;
   private inputRef: HTMLInputElement;
@@ -27,6 +27,25 @@ export class HashBot {
   private offsetY: number = 0;
   private floatingIconRef: HTMLElement;
   private chatContainerRef: HTMLElement;
+
+  // Utility function to generate unique session-like ID
+  private generateChatId(): string {
+    const letters = Math.random().toString(36).substring(2, 5); // e.g. "xkd"
+    const numbers = Math.floor(100 + Math.random() * 900); // e.g. 472
+    return `session-${letters}${numbers}`;
+  }
+
+  componentWillLoad() {
+    // On mount, check sessionStorage or create new chat_id
+    const existingChatId = sessionStorage.getItem("hash-bot-chat-id");
+    if (existingChatId) {
+      this.chatId = existingChatId;
+    } else {
+      const newChatId = this.generateChatId();
+      sessionStorage.setItem("hash-bot-chat-id", newChatId);
+      this.chatId = newChatId;
+    }
+  }
 
   connectedCallback() {
     if (!this.apiurl) {
@@ -78,7 +97,7 @@ export class HashBot {
       this.socket.emit('ask', {
         message: message,
         agent_uuid: this.agent_uuid,
-        chat_id: this.chat_id,
+        chat_id: this.chatId, // Use generated chatId
       });
 
       this.inputRef.value = '';

@@ -11,7 +11,6 @@
 | --------------- | --------------- | ----------- | -------- | ---------------- |
 | `agent_uuid`    | `agent_uuid`    |             | `string` | `undefined`      |
 | `apiurl`        | `apiurl`        |             | `string` | `undefined`      |
-| `chat_id`       | `chat_id`       |             | `string` | `'default-chat'` |
 | `chatbotheight` | `chatbotheight` |             | `number` | `400`            |
 | `chatbotwidth`  | `chatbotwidth`  |             | `number` | `300`            |
 | `iconsize`      | `iconsize`      |             | `number` | `40`             |
