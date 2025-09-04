@@ -1,6 +1,6 @@
 {
   "name": "alpha-interface",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Here is a simple interface for a chat bot. It is a web component that can be used in any web application.",
   "keywords": [
     "web-components",

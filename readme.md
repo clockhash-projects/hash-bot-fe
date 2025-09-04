@@ -32,7 +32,7 @@ npm test
 <script type="module" src="https://unpkg.com/hash-bot"></script>
 <!--
 To avoid unpkg.com redirects to the actual file, you can also directly import:
-https://cdn.jsdelivr.net/npm/alpha-interface@1.0.0/dist/hash-bot/hash-bot.esm.js
+https://cdn.jsdelivr.net/npm/alpha-interface@1.0.1/dist/hash-bot/hash-bot.esm.js
 -->
 <hash-bot agent_uuid="agent_uuid"  apiurl="apiUrl" iconsize="90" chatbotwidth="300" chatbotheight="400"></hash-bot>
 ```
@@ -54,13 +54,15 @@ function App() {
   return (
     <>
       <div>
-        <hash-bot
-          agent_uuid="agent_uuid" 
-          apiurl="apiurl"
+        <hash-bot 
+          apiurl="apiurl" 
+          agent_uuid="1b68cb7c-22e3-453c-9a38-xxxxxxxx" 
+          bot_name="ChatBot Test" 
           iconsize="90" 
           chatbotwidth="300" 
-          chatbotheight="400"
-        ></hash-bot>
+          chatbotheight="400" 
+          welcome_message="Hi! \n I'm an AI assistant trained on documentation, help articles, and other content. \n \n Ask me anything!">
+        </hash-bot>
       </div>
     </>
   );

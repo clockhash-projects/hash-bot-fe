@@ -9,6 +9,7 @@ export namespace Components {
     interface HashBot {
         "agent_uuid": string;
         "apiurl": string;
+        "bot_name": string;
         /**
           * @default 400
          */
@@ -21,6 +22,7 @@ export namespace Components {
           * @default 40
          */
         "iconsize": number;
+        "welcome_message": string;
     }
 }
 declare global {
@@ -38,6 +40,7 @@ declare namespace LocalJSX {
     interface HashBot {
         "agent_uuid"?: string;
         "apiurl"?: string;
+        "bot_name"?: string;
         /**
           * @default 400
          */
@@ -50,6 +53,7 @@ declare namespace LocalJSX {
           * @default 40
          */
         "iconsize"?: number;
+        "welcome_message"?: string;
     }
     interface IntrinsicElements {
         "hash-bot": HashBot;
