@@ -32,9 +32,9 @@ npm test
 <script type="module" src="https://unpkg.com/hash-bot"></script>
 <!--
 To avoid unpkg.com redirects to the actual file, you can also directly import:
-https://cdn.jsdelivr.net/npm/alpha-interface@1.0.1/dist/hash-bot/hash-bot.esm.js
+https://cdn.jsdelivr.net/npm/alpha-interface@1.0.2/dist/hash-bot/hash-bot.esm.js
 -->
-<hash-bot agent_uuid="agent_uuid"  apiurl="apiUrl" iconsize="90" chatbotwidth="300" chatbotheight="400"></hash-bot>
+<hash-bot bot_name="ChatBot Test"  agent_uuid="1b68cb7c-22e3-453c-9a38-xxxxxxxx" welcome_message="Hi! Ask me anything." iconsize="90" chatbotwidth="300" chatbotheight="400"></hash-bot>
 ```
 
 This will only load the necessary scripts needed to render `<hash-bot/>`. Once more components of this package are used, they will automatically be loaded lazily.
@@ -55,13 +55,12 @@ function App() {
     <>
       <div>
         <hash-bot 
-          apiurl="apiurl" 
-          agent_uuid="1b68cb7c-22e3-453c-9a38-xxxxxxxx" 
           bot_name="ChatBot Test" 
+          agent_uuid="1b68cb7c-22e3-453c-9a38-xxxxxxxx" 
+          welcome_message="Hi! Ask me anything."
           iconsize="90" 
           chatbotwidth="300" 
-          chatbotheight="400" 
-          welcome_message="Hi! \n I'm an AI assistant trained on documentation, help articles, and other content. \n \n Ask me anything!">
+          chatbotheight="400">
         </hash-bot>
       </div>
     </>

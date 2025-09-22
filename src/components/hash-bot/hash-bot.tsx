@@ -7,16 +7,16 @@ import { io, Socket } from 'socket.io-client';
   shadow: true,
 })
 export class HashBot {
-  @Prop() apiurl: string;
   @Prop() bot_name: string;
   @Prop() agent_uuid: string;
+  @Prop() welcome_message: string;
   @Prop() iconsize: number = 40;
   @Prop() chatbotwidth: number = 300;
   @Prop() chatbotheight: number = 400;
-  @Prop() welcome_message: string;
-  @State() messages: { text: string; sender: 'user' | 'bot' }[] = [];
+
   private messagesEndRef: HTMLElement;
 
+  @State() messages: { text: string; sender: 'user' | 'bot' }[] = [];
   @State() isChatOpen: boolean = false;
   @State() unreadMessages: number = 0;
   @State() isBotTyping: boolean = false;
@@ -25,6 +25,7 @@ export class HashBot {
   @State() hasStarted: boolean = false;
   @State() exampleQuestions: { question: string; id: string }[] = [];
   @State() inputValue: string = ''; // Add this state
+  @State() apiurl: string = 'https://chatbot.prod.alphainterface.ai';
 
   private socket: Socket;
   private inputRef: HTMLInputElement;
@@ -57,7 +58,7 @@ export class HashBot {
     // Fetch example questions from API
     if (this.agent_uuid) {
       try {
-        const res = await fetch(`https://chatbot.dev.alphainterface.ai/api/agents/example-questions/${this.agent_uuid}`);
+        const res = await fetch(this.apiurl + `/api/agents/example-questions/${this.agent_uuid}`);
         const json = await res.json();
         this.exampleQuestions = Array.isArray(json.data) ? json.data : [];
       } catch (err) {
@@ -68,11 +69,6 @@ export class HashBot {
   }
 
   connectedCallback() {
-    if (!this.apiurl) {
-      console.error('API URL is required for the hash-bot component');
-      return;
-    }
-
     this.socket = io(this.apiurl, {
       transports: ['websocket', 'polling'],
     });
